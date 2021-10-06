@@ -1,0 +1,161 @@
+.banner{
+    background-image: url(https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80);
+    @media (min-width: 992px){
+        background-image: url(https://images.unsplash.com/photo-1588868478780-508f035f7562?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);
+    }
+    .bannerSlogan{
+        position: absolute;
+        color: white;
+        top: 50%;
+        @media (min-width: 992px){
+            transform: translate(0, -60%);
+            top: 65%;
+            font-size: 36px;
+        }
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 50px;
+        border-radius: 40px;
+        font-size: 26px;
+    }
+    .typeAnime {
+        text-align: center;
+        width: 100%;
+        border-right: .05em solid;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: type 3s steps(26), blink 0.5s infinite alternate;
+        -webkit-animation: type 3s steps(26), blink 0.5s infinite alternate;
+        
+    }
+    @keyframes type {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
+    }
+    @keyframes blink {
+        from {
+          border-color: transparent;
+        }
+        to {
+          border-color: #ffffff;
+        }
+    }
+}
+.animated {
+  opacity: 0;
+  transition: all 1s;
+  transform: translateX(-100px);
+}
+.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animatedY {
+  opacity: 0;
+  transition: all 1s;
+  transform: translateY(-100px);
+}
+.fadeInY {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// 以下為navbar效果
+.navbar{
+  .navbar-brand{
+    font-size: 20px;
+    font-weight:bold
+  }
+  .nav-item{
+    font-size: 20px;
+    font-weight:bold
+  }
+  .a-hover:hover{
+    color:#669999 !important;
+  }
+}
+
+
+// 以下測試
+.content-section {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+.content-section-heading h2, .content-section-heading .h2 {
+  font-size: 3rem;
+}
+.content-section-heading h3, .content-section-heading .h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.g-0,
+.gx-0 {
+  --bs-gutter-x: 0;
+}
+.portfolio-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 530px;
+  margin: auto auto 1rem;
+}
+.portfolio-item .caption {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 37, 41, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.portfolio-item .caption .caption-content {
+  color: #fff;
+  margin: auto 2rem 2rem;
+}
+.portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.portfolio-item .caption .caption-content p {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+@media (min-width: 992px) {
+  .portfolio-item {
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-item .caption {
+    transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+    transition: clip-path 0.25s ease-out, background-color 0.7s;
+    transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(0px);
+            clip-path: inset(0px);
+  }
+  .portfolio-item .caption .caption-content {
+    transition: opacity 0.25s;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 5rem;
+  }
+  .portfolio-item img {
+    transition: -webkit-clip-path 0.25s ease-out;
+    transition: clip-path 0.25s ease-out;
+    transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+            clip-path: inset(-1px);
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(2rem);
+            clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-clip-path: inset(2rem);
+            clip-path: inset(2rem);
+  }
+}
