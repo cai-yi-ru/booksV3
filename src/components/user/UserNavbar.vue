@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg ">
       <div class="container-fluid">
         <div class="">
           <a class="navbar-brand text-black d-flex align-items-center"  href="#">

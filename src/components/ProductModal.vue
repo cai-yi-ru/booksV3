@@ -102,14 +102,24 @@
           <hr>
 
           <div class="mb-3">
-            <label for="description" class="form-label">產品描述</label>
+            <label for="description" class="form-label">描述</label>
             <textarea type="text" class="form-control" id="description"
                       placeholder="請輸入產品描述" v-model="tempProduct.description"></textarea>
           </div>
           <div class="mb-3">
-            <label for="content" class="form-label">說明內容</label>
+            <label for="content" class="form-label">內容簡介</label>
             <textarea type="text" class="form-control" id="content"
-                      placeholder="請輸入產品說明內容"  v-model="tempProduct.content"></textarea>
+                      placeholder="請輸入內容簡介"  v-model="tempProduct.content"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">作者簡介</label>
+            <textarea type="text" class="form-control" id="author"
+                      placeholder="請輸入作者簡介"  v-model="tempProduct.author"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="catalog" class="form-label">目錄</label>
+            <textarea type="text" class="form-control" id="catalog"
+                      placeholder="請輸入目錄"  v-model="tempProduct.catalog"></textarea>
           </div>
           <div class="mb-3">
             <div class="form-check">
@@ -120,6 +130,18 @@
                       id="is_enabled">
               <label class="form-check-label" for="is_enabled">
                 是否啟用
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"
+                      v-model="tempProduct.is_onSale"
+                      :true-value="1"
+                      :false-value="0"
+                      id="is_onSale">
+              <label class="form-check-label" for="is_onSale">
+                是否特價
               </label>
             </div>
           </div>

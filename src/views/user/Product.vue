@@ -5,25 +5,38 @@
       <div class="container">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent pl-0">
-            <li class="breadcrumb-item"><a href="#">所有商品</a></li>
-            <li class="breadcrumb-item">{{product.category}}</li>
+            <li class="breadcrumb-item">
+              <a href="#" @click.prevent="$router.push(
+              { name: 'products', params: { category: 'All' }})">
+              所有商品
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" @click.prevent="$router.push(
+              { name: 'products', params: { category: product.category }})">
+              {{product.category}}
+              </a>
+            </li>
             <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
           </ol>
         </nav>
         <div class="row">
           <div class="col-md-4 mt-5">
             <div class="sticky-top BGcolor" style="top: 30px;">
-              <h1 class="h2 ">{{product.title}}</h1>
+              <h1 class="h4">{{product.title}}</h1>
               <img :src="product.imageUrl" class="w-100" alt="" />
-              <div class="d-flex my-1">
-                <i class="bi bi-star-fill text-warning "
+              <div class="d-flex mt-5">
+                <span class="me-2">★館長推薦 </span>
+                <i class="bi bi-star-fill text-warning"
                 v-for="num in product.star" :key="num"></i>
-                <p class="ms-3 me-auto">已售出{{product.sell_num}}</p>
-                <span class="text-dark" @click.prevent="setFav(product.id)">
+                <span class="text-dark ms-auto" @click.prevent="setFav(product.id)">
                   <i class="h4 bi bi-suit-heart-fill text-red"
                   v-if="this.favorited.indexOf(product.id) > -1"></i>
                   <i class="h4 bi bi-suit-heart text-red" v-else></i>
                 </span>
+              </div>
+              <div>
+                <p class="">★已售出{{product.sell_num}}</p>
               </div>
               <hr>
               <p v-html="product.description" class="mt-3"></p>
@@ -55,9 +68,26 @@
           </div>
 
           <div class="col-md-8">
-            <h3>詳細介紹</h3>
-            <div class="h5"  v-html="product.content">
-
+            <div>
+              <h3 class="text-orange">詳細介紹</h3>
+              <hr>
+              <div class="mt-3 mb-5">
+                <p v-html="product.content"></p>
+              </div>
+            </div>
+            <div v-if="product.author">
+              <h3 class="mt-5 text-orange">作者介紹</h3>
+              <hr>
+              <div  class="mt-3 mb-5">
+                <p v-html="product.author"></p>
+              </div>
+            </div>
+            <div v-if="product.catalog">
+              <h3 class="mt-5 text-orange">目錄</h3>
+              <hr>
+              <div  class="mt-3 mb-5">
+                <p v-html="product.catalog"></p>
+              </div>
             </div>
             <div v-for="url in product.imagesUrl" :key="url" class="mt-3">
                 <img :src="url" class="w-100" alt="" />
@@ -110,6 +140,8 @@ export default {
           this.product.num = 1;
           this.product.content = this.product.content.replace(/\n/g, '<br>');
           this.product.description = this.product.description.replace(/\n/g, '<br>');
+          this.product.author = this.product.author.replace(/\n/g, '<br>');
+          this.product.catalog = this.product.catalog.replace(/\n/g, '<br>');
         //   this.pagination = res.data.pagination;
         }
       });

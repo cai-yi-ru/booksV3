@@ -24,56 +24,63 @@
             </div>
         </div>
         <div class="col-md-10">
-          <!-- <div class="row row-cols-1 row-cols-md-3 g-4 mb-2">
-            <div class="col" v-for="item in filterProducts" :key="item.id">
+          <div class="row row-cols-2 row-cols-md-4 g-4 mb-2">
+            <div  class="col" v-for="item in filterProducts"
+            :key="item.id">
               <div class="card h-100 border-0 box-shadow">
-                    <div style="height: 180px; background-size: cover;
-                    background-position: center" class="w-100"
-                    :style="{backgroundImage:`url(${item.imageUrl})`}">
+                    <div style="height: 200px; background-size: contain;
+                    background-position: center;background-repeat:no-repeat;"
+                    class="w-100 position-relative"
+                    :style="{backgroundImage:`url(${item.imageUrl})`}"
+                    type="button" @click.prevent="getProduct(item.id)">
                     </div>
-                <div class="card-body">
-                  <span class="badge bg-secondary float-end ml-2">{{ item.category }}</span>
-                  <h5 class="card-title">{{item.title}}</h5>
+                    <span class="badge bg-danger position-absolute top-0 end-0 p-2
+                    zindex-fixed h6 align-items-center"
+                  v-if="item.is_onSale"><i class="bi bi-alarm"></i>
+                  <strong class="h6">限時特賣</strong></span>
+                <div class="card-body" type="button" @click.prevent="getProduct(item.id)">
+                  <!-- <span class="badge bg-secondary float-end ml-2">
+                    {{ item.category }}</span> -->
+                  <h5 class="card-title h6 webkit-line-clamp">{{item.title}}</h5>
                   <p class="card-text">
                   </p>
                   <div class="d-flex justify-content-between align-items-baseline">
-                    <div class="h5">2,800 元</div> -->
-                    <!-- <div class="h5" v-if="!item.price">{{ item.origin_price }} 元</div>
-                    <del class="h6" v-if="item.price">原價 {{ item.origin_price }} 元</del>
-                    <div class="h5" v-if="item.price"><strong>現在只要
-                      <span class="text-danger">{{ item.price }}</span> 元
+                    <span class="text-danger">{{parseInt(item.price/item.origin_price*100)}}折
+                    </span>
+                    <div class="h6" v-if="!item.price">{{ item.origin_price }} 元</div>
+                    <!-- <del class="h6" v-if="item.price">原價 {{ item.origin_price }} 元</del> -->
+                    <div class="h6" v-if="item.price"><strong>優惠價
+                      <span class=" h6 text-danger">{{ item.price }}</span> 元
                       </strong></div>
                   </div>
                 </div>
                 <div class="card-footer border-top-0 bg-white d-flex mb-2 mx-2">
 
-                  <button type="button" class="btn btn-outline-secondary btn-sm"
+                  <!-- <button type="button" class="btn btn-outline-secondary btn-sm"
                   @click.prevent="getProduct(item.id)">
                     <i class="fas fa-spinner fa-spin"></i>
                     查看更多
-                  </button>
-                  <button type="button" class="btn btn-outline-danger btn-sm ms-auto"
+                  </button> -->
+                  <button type="button" class="btn btn-outline-danger btn-sm m-auto"
                   @click="addCart(item.id)" :disabled="this.status.loadingItem === item.id">
                     <div v-if="this.status.loadingItem === item.id"
                     class="spinner-border spinner-border-sm" role="status">
-                      <span class="visually-hidden">Loading...</span>
                     </div>
                     加到購物車
                   </button>
                 </div>
               </div>
             </div>
-          </div> -->
-
-          <div class="card mb-3 box-shadow" style="max-width: 100%;"
+          </div>
+          <!-- <div class="card mb-3 box-shadow" style="max-width: 100%;"
           v-for="item in filterProducts" :key="item.id">
           <a type="button" @click.prevent="getProduct(item.id)">
             <div class="row g-0">
               <div class="col-md-4">
-                <!-- <div style="height: 300px; background-size: 100% 100%;
+                <div style="height: 300px; background-size: 100% 100%;
                   background-position: center" class="w-100 pic"
                   :style="{backgroundImage:`url(${item.imageUrl})`}">
-                </div> -->
+                </div>
                 <div class="pic position-relative h4 mb-n1">
                   <img :src="item.imageUrl" class="h-100 w-100 img-fluid ">
                   <span class="badge bg-danger position-absolute top-0 end-0 p-2 zindex-fixed"
@@ -106,7 +113,6 @@
                       </div>
                     </div>
                     <div class="col-md-8 text-end">
-                      <!-- <div class="h5">2,800 元</div> -->
                       <div class="h5" v-if="!item.price">{{ item.origin_price }} 元</div>
                       <del class="h6" v-if="item.price">原價 {{ item.origin_price }} 元</del>
                       <div class="h5" v-if="item.price"><strong>現在只要
@@ -118,7 +124,12 @@
               </div>
             </div>
           </a>
-          </div>
+          </div> -->
+        <div class="mt-5">
+          <!-- <Pagination :pages="pagination"
+          @emit-pages="getProducts"
+          v-if="category ==='All'"></Pagination> -->
+        </div>
         </div>
       </div>
     </div>
@@ -126,6 +137,14 @@
 </template>
 
 <style>
+.webkit-line-clamp{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 2.4em;
+}
 .box-shadow {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
   transition: box-shadow 0.5s;
@@ -153,12 +172,14 @@
 
 <script>
 import emitter from '@/methods/emitter';
+// import Pagination from '../../components/Pagination.vue';
 
 export default {
   data() {
     return {
       products: [],
       product: {},
+      pagination: {},
       status: {
         loadingItem: '', // 對應品項ID
       },
@@ -169,16 +190,22 @@ export default {
       serch: '',
     };
   },
+  inject: ['emitter'],
+  // components: {
+  //   Pagination,
+  // },
   methods: {
-    getProducts(page = 1) {
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/?page=${page}`;
+    getProducts() {
+      // const api = `${process.env.VUE_APP_API}api/
+      // ${process.env.VUE_APP_PATH}/products/?page=${page}`;
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`;
       this.isLoading = true;
       this.$http.get(api).then((res) => {
         this.isLoading = false;
         if (res.data.success) {
           console.log(res);
           this.products = res.data.products;
-        //   this.pagination = res.data.pagination;
+          // this.pagination = res.data.pagination;
         }
       });
     },

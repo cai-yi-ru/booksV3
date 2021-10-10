@@ -14,6 +14,7 @@
           <th width="120">原價</th>
           <th width="120">售價</th>
           <th width="100">是否啟用</th>
+          <th width="100">是否特價</th>
           <th width="200">編輯</th>
         </tr>
       </thead>
@@ -22,13 +23,17 @@
           <td>{{item.category}}</td>
           <td>{{item.title}}</td>
           <td class="text-right">
-            {{$filters.currency(item.origin_price)}}
+            NT$ {{$filters.currency(item.origin_price)}}
           </td>
           <td class="text-right">
-            {{$filters.currency(item.price)}}
+            NT$ {{$filters.currency(item.price)}}
           </td>
           <td>
             <span class="text-success" v-if="item.is_enabled">啟用</span>
+            <span class="text-muted" v-else>未啟用</span>
+          </td>
+          <td>
+            <span class="text-success" v-if="item.is_onSale">啟用</span>
             <span class="text-muted" v-else>未啟用</span>
           </td>
           <td>
@@ -42,7 +47,7 @@
         </tr>
       </tbody>
     </table>
-    <Pagination :pages="pagination" @emit-pages="getProdutcts"></Pagination>
+    <Pagination :pages="pagination" @emit-pages="getProducts"></Pagination>
     <ProductModal ref="productModal" :product="tempProduct"
     @update-product="updateProduct"></ProductModal>
     <DelModal ref="delModal" :item="tempProduct" @del-item="delProduct"></DelModal>
@@ -71,7 +76,7 @@ export default {
   },
   inject: ['emitter'],
   methods: {
-    getProdutcts(page = 1) {
+    getProducts(page = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`;
       console.log(api);
       this.isLoading = true;
@@ -113,7 +118,7 @@ export default {
         console.log(response);
         this.isLoading = false;
         productComponent.hideModal();
-        this.getProdutcts();
+        this.getProducts();
         this.$httpMessageState(response, '更新產品');
       });
       this.tempProduct = {};
@@ -132,13 +137,13 @@ export default {
       this.$http.delete(api).then((response) => {
         this.isLoading = false;
         productComponent.hideModal();
-        this.getProdutcts();
+        this.getProducts();
         this.$httpMessageState(response, '刪除資料');
       });
     },
   },
   created() {
-    this.getProdutcts();
+    this.getProducts();
   },
 };
 </script>

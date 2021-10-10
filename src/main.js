@@ -6,6 +6,11 @@ import Loading from 'vue3-loading-overlay';
 import 'vue3-loading-overlay/dist/vue3-loading-overlay.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+/* swiper */
+import SwiperCore, { Autoplay, Virtual } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper.scss';
+
 import {
   Form, Field, ErrorMessage, defineRule, configure,
 } from 'vee-validate';
@@ -13,10 +18,14 @@ import AllRules from '@vee-validate/rules';
 import { localize, setLocale } from '@vee-validate/i18n';
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json';
 
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 import App from './App.vue';
 import router from './router';
 import { currency, date } from './methods/filters';
 import $httpMessageState from './methods/pushMessageState';
+
 
 const app = createApp(App);
 app.config.globalProperties.$filters = {
@@ -35,7 +44,12 @@ configure({
 // 設定預設語系
 setLocale('zh_TW');
 
+SwiperCore.use([Autoplay, Virtual]);
+
 app.config.globalProperties.$httpMessageState = $httpMessageState;
+app.component('Swiper', Swiper);
+app.component('SwiperSlide', SwiperSlide);
+app.use(VueSweetalert2);
 app.use(VueAxios, axios);
 app.use(router);
 app.component('Loading', Loading);
