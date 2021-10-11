@@ -13,9 +13,9 @@
             font-size: 36px;
         }
         background-color: rgba(0, 0, 0, 0.6);
-        padding: 50px;
+        padding: 30px;
         border-radius: 40px;
-        font-size: 20px;
+        font-size: 16px;
     }
     .typeAnime {
         text-align: center;
@@ -92,27 +92,27 @@
 //優惠券
 .coupon {
   position: absolute;
-  width: 360px;
-  height: 160px;
+  width: 240px;
+  height: 100px;
   margin: auto;
   background-image: radial-gradient( circle at 1px 8px,
   transparent 6px, #ff9e6d 6px, #ff9e6d 0px),
-  radial-gradient( circle at 180px 8px,
+  radial-gradient( circle at 120px 8px,
   transparent 6px, #ff9e6d 6px, #ff9e6d 0px);
-  background-size: 180px 18px;
-  background-position: 0 0, 180px 0;
+  background-size: 120px 18px;
+  background-position: 0 0, 120px 0;
   background-repeat: no-repeat repeat;
-  font-size: 36px;
+  font-size: 20px;
   color: #fff;
   font-weight: bold;
-  line-height: 160px;
-  padding-left: 40px;
+  line-height: 100px;
+  padding-left: 25px;
   box-sizing: border-box;
   cursor: pointer;
   &::before {
     position: absolute;
     content: "";
-    left: 200px;
+    left: 130px;
     top: 0;
     bottom:0;
     width: 0;
@@ -121,35 +121,79 @@
   &::after {
     position: absolute;
     content: "立即領取";
-    font-size: 26px;
-    width: 70px;
+    font-size: 16px;
+    width: 45px;
     top: 50%;
     right: 2%;
     transform:
     translate(-50%, -50%);
-    line-height: 40px;
+    line-height: 30px;
     letter-spacing: 5px;
   }
   i {
     cursor: pointer;
     position: absolute;
     color: #000;
-    top: -100px;
-    right: -30px;
+    top: -70px;
+    right: -15px;
     transform: rotate(135deg);
     animation: scissorCut .7s infinite;
   }
+  @media (min-width: 992px){
+    width: 360px;
+    height: 160px;
+    background-image: radial-gradient( circle at 1px 8px,
+    transparent 6px, #ff9e6d 6px, #ff9e6d 0px),
+    radial-gradient( circle at 180px 8px,
+    transparent 6px, #ff9e6d 6px, #ff9e6d 0px);
+    background-size: 180px 18px;
+    background-position: 0 0, 180px 0;
+    font-size: 36px;
+    line-height: 160px;
+    padding-left: 40px;
+    &::before {
+      position: absolute;
+      content: "";
+      left: 200px;
+      top: 0;
+      bottom:0;
+      width: 0;
+      border-left: 1px dashed #fff;
+    }
+    &::after {
+      position: absolute;
+      content: "立即領取";
+      font-size: 26px;
+      width: 70px;
+      top: 50%;
+      right: 2%;
+      transform:
+      translate(-50%, -50%);
+      line-height: 40px;
+      letter-spacing: 5px;
+    }
+    i {
+      cursor: pointer;
+      position: absolute;
+      color: #000;
+      top: -100px;
+      right: -30px;
+      transform: rotate(135deg);
+      animation: scissorCut .7s infinite;
+    }
+  }
+  
   @keyframes scissorCut {
-  0% {
-    transform: rotate(145deg);
+    0% {
+      transform: rotate(145deg);
+    }
+    50% {
+      transform: rotate(135deg);
+    }
+    100% {
+      transform: rotate(145deg);
+    }
   }
-  50% {
-    transform: rotate(135deg);
-  }
-  100% {
-    transform: rotate(145deg);
-  }
-}
 }
 
 .index-mask {
