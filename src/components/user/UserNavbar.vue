@@ -47,8 +47,3 @@
   </div>
 </template>
 
-<style>
-.bi-cart3{
-  font-size: 25px;
-}
-</style>

@@ -47,31 +47,4 @@
     </footer>
 </template>
 
-<style>
-.FooterBg{
-    background-color: #0D1037;
-    font-size: 12px;
-    padding: 30px;
-    height: auto;
-    color: #fff;
-}
-.FooterBg ul li{
-    list-style: none;
-}
-.FooterBg ul li a{
-    text-decoration:none;
-    color: #fff;
-}
-.footerlink{
-    font-size: 24px;
-}
-.footer-text{
-    font-size: 12px;
-    margin-bottom: 4px;
-}
-@media (min-width: 992px) {
-  .FooterBg{
-    font-size: 16px;
-    }
-}
-</style>
+

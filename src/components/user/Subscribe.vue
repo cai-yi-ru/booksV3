@@ -1,11 +1,11 @@
 <template>
   <!-- 訂閱 -->
   <div
-    class=" position-relative"
+    class="position-relative"
     style="background-image: url('https://images.unsplash.com/photo-1526554850534-7c78330d5f90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
     height: 300px; background-size: cover; background-position: center"
   >
-    <div class="text-white d-flex flex-column justify-content-center">
+    <div class="index-mask text-white d-flex flex-column justify-content-center">
       <div class="container" data-aos="fade-up">
         <label for="subscribe" class="mb-2">訂閱我們</label>
         <p>好康情報不錯過！</p>

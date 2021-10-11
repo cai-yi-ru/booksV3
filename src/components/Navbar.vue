@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">控制台</a>
+        <a class="navbar-brand">控制台</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -18,6 +18,9 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link class="nav-link" to="/dashboard/products">產品</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/dashboard/orders">訂單</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/dashboard/coupons">優惠券</router-link>

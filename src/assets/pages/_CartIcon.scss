@@ -1,0 +1,23 @@
+.cart {
+    z-index: 15;
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+    width: 55px;
+    height: 55px;
+    color: #e2c79e;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s;
+    border: 2px #e2c79e solid;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 35px;
+    .badge {
+        position: absolute;
+        top: 0x;
+        right: -5px;
+        font-size: 10px;
+    }
+}
+  

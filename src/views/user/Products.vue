@@ -136,40 +136,6 @@
   </div>
 </template>
 
-<style>
-.webkit-line-clamp{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  height: 2.4em;
-}
-.box-shadow {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
-  transition: box-shadow 0.5s;
-}
-.box-shadow:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-.pic{
-  height: 100%;
-  overflow:hidden;
-  }
-.pic img{
-  transform:scale(1,1);
-  transition: all 0.5s ease-out;
-  max-width: 100%;
-}
-.pic img:hover{
-  transform:scale(1.2,1.2);
-}
-.absolute {
-  position: absolute;
-  bottom: 0;
-}
-</style>
-
 <script>
 import emitter from '@/methods/emitter';
 // import Pagination from '../../components/Pagination.vue';

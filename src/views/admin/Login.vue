@@ -1,39 +1,42 @@
 <template>
-  <div class="container mt-5">
-    <form class="row justify-content-center" @submit.prevent="signin">
-      <div class="col-md-6">
-        <h1 class="h3 mb-3 font-weight-normal">請先登入</h1>
-        <div class="mb-2">
-          <label for="inputEmail" class="sr-only">Email address</label>
+<div class="loginbody">
+  <div class="login ">
+    <form class="form" @submit.prevent="signin">
+      <h2>管理者登入</h2>
+      <div class="loginGroup mb-2">
+        <label for="inputEmail" class="sr-only">帳號</label>
           <input
             type="email"
             id="inputEmail"
             class="form-control"
-            placeholder="Email address"
+            placeholder="請輸入電子信箱"
             required
             autofocus
             v-model="user.username"
           />
-        </div>
-        <div class="mb-2">
-          <label for="inputPassword" class="sr-only">Password</label>
+      </div>
+      <div class="loginGroup mb-2">
+        <label for="inputPassword" class="sr-only">密碼</label>
           <input
             type="password"
             id="inputPassword"
             class="form-control"
-            placeholder="Password"
+            placeholder="請輸入密碼"
             required
             v-model="user.password"
           />
-        </div>
-
-        <div class="text-end mt-4">
-          <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
-        </div>
+      </div>
+      <div class="btnGroup">
+        <button class="btn btn-lg btn-primary btn-block me-2">確認</button>
+        <button class="btn btn-lg btn-outline-secondary btn-block text-white"
+        @click.prevent="$router.push(`/`)">取消</button>
       </div>
     </form>
   </div>
+</div>
+
 </template>
+
 <script>
 export default {
   data() {

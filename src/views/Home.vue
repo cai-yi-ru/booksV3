@@ -35,70 +35,6 @@
         </div>
       </section>
 
-    <!-- <section class="content-section animated" id="portfolio">
-            <div class="container px-4 px-lg-5 ">
-                <div class="content-section-heading text-center">
-                    <h3 class="text-secondary mb-0">TRAVEL</h3>
-                    <h2 class="mb-5">熱門夯景點</h2>
-                </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!"
-                        @click.prevent="$router.push(
-                          { name: 'products', params: { category: '台灣' }})">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">台灣</div>
-                                </div>
-                            </div>
-                            <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1556115908-233c785befbe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!"
-                        @click.prevent="$router.push(
-                          { name: 'products', params: { category: '日本' }})">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">日本</div>
-                                </div>
-                            </div>
-                            <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#"
-                        @click.prevent="$router.push(
-                          { name: 'products', params: { category: '韓國' }})">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">韓國</div>
-                                </div>
-                            </div>
-                            <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!"
-                        @click.prevent="$router.push(
-                          { name: 'products', params: { category: '中國' }})">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">中國</div>
-                                </div>
-                            </div>
-                            <img class="img-fluid"
-                            src="https://images.unsplash.com/photo-1508804052814-cd3ba865a116?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="..." />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-
   <section class="mt-5 animatedY">
   <div class="container mb-4 mb-md-7" data-aos="fade-up">
     <div class="d-md-flex align-items-md-center">
@@ -298,138 +234,6 @@
   </div>
 </template>
 
-
-<style>
-.webkit-line-clamp{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  height: 2.4em;
-}
-.coupon {
-  position: absolute;
-  width: 400px;
-  height: 160px;
-  margin: auto;
-  background-image: radial-gradient( circle at 1px 8px,
-  transparent 6px, #ff9e6d 6px, #ff9e6d 0px),
-  radial-gradient( circle at 199px 8px,
-  transparent 6px, #ff9e6d 6px, #ff9e6d 0px);
-  background-size: 200px 18px;
-  background-position: 0 0, 200px 0;
-  background-repeat: no-repeat repeat;
-  font-size: 36px;
-  color: #fff;
-  font-weight: bold;
-  line-height: 160px;
-  padding-left: 40px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-.coupon::before {
-  position: absolute;
-  content: "";
-  left: 240px;
-  top: 0;
-  bottom:0;
-  width: 0;
-  border-left: 1px dashed #fff;
-}
-.coupon::after {
-  position: absolute;
-  content: "立即領取";
-  font-size: 26px;
-  width: 70px;
-  top: 50%;
-  right: 2%;
-  transform:
-  translate(-50%, -50%);
-  line-height: 40px;
-  letter-spacing: 5px;
-}
-
-
-
-
-.index-mask {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(204, 224, 222, .4);
-}
-.index-mask h3 {
-    background: linear-gradient(transparent 60%, pink 40%);
-  }
-.discount-code {
-  min-width: 250px;
-  background-color: rgba(255, 255, 255, .2);
-  border: 2px white;
-  transition: .3s;
-}
-.discount-code input, i {
-  cursor: pointer;
-}
-.discount-code i {
-  position: absolute;
-  color: #000;
-  top: -100px;
-  right: -30px;
-  transform: rotate(135deg);
-  animation: scissorCut .7s infinite;
-}
-.discount-code:hover {
-    background-color: transparent;
-  }
-
-@keyframes scissorCut {
-  0% {
-    transform: rotate(145deg);
-  }
-  50% {
-    transform: rotate(135deg);
-  }
-  100% {
-    transform: rotate(145deg);
-  }
-}
-
-
-
-
-.mainNavbar{
-  transition-duration: 1s;
-}
-/* .banner{
-  background-image: url(https://images.unsplash.com/photo-1502726488490-f99c74217a37?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);
-  @media (min-width: 992px){
-    background-image: url(https://storage.googleapis.com/vue-course-api.appspot.com/yiren/1625800945548.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=mr%2Fd%2BiweQ6mYWz1FTHZihntrqXkiVkhz4BiG28WPx1PdZ2vwrONGg8qxa1cuRZ%2BUcHYP6gYV9jSCanZWT9gjwinkpMutbuyyQtgd3ftrvi70e3NGql%2BRJYwlm4UFyw5CAb8Z2npu38LhAqwBB1kYMcxeROFKmoZn09P%2FRRcqVsxrtlIGFBxoxM27RsksdmwsOY6Y2qugklqfwZf2kzYlAKrt1TTh450fr9sI4EwoxrDVstL94guZH%2BROsliMNlNtjPRZ5dyGiTXdQ18ROkWyWUlPqqVwDq2lwe2dZ1wEbQYlj%2Fp560PhmdX72TOr2Xgr46jkX0zvaK0k6rWDZ98Rww%3D%3D);
-  }
-} */
-.img{
-  object-fit: cover;
-}
-.bgImg{
-  display: flex;
-  flex-direction: column;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-.bgCover{
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0,0,0,.1);
-  position: absolute;
-}
-
-</style>
-
-
 <script>
 import $ from 'jquery';
 import emitter from '@/methods/emitter';
@@ -501,6 +305,7 @@ export default {
       selection.addRange(range);
       document.execCommand('copy');
       selection.removeAllRanges();
+      this.$swal.fire({ icon: 'success', title: '已複製到剪貼簿' });
     },
   },
   mounted() {

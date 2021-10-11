@@ -102,14 +102,7 @@
     </section>
   </div>
 </template>
-<style>
-.BGcolor{
-  background-color: #fff;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-}
-</style>
+
 <script>
 import ShoppingNotes from '../../components/user/ShoppingNotes.vue';
 import emitter from '@/methods/emitter';
