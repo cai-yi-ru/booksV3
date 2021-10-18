@@ -60,6 +60,13 @@ const routes = [
     path: '/login',
     component: () => import('../views/admin/Login.vue'),
   },
+  // 重新導向
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: {
+      name: 'Home',
+    },
+  },
   {
     path: '/dashboard',
     component: () => import('../views/admin/Dashboard.vue'),
