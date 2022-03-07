@@ -181,47 +181,6 @@
   </div>
     </section>
 
-      <!-- <section id="introdiction"
-      class="introdiction text-center container
-      position-relative d-flex flex-column justify-content-around">
-    <div class="row mb-4 mt-4 animatedY">
-      <div class="col-md-5">
-        <div class="h2 m-3 p-3 fw-bolder">關於本站</div>
-        <div class="h6 lh-lg m-auto p-4">
-          我們提供你各種<br />
-          顏值高又強大的怪獸卡<br />
-          實用度高的輔助魔法卡<br />
-          干擾度稱一流的陷阱卡<br />
-          盡情地選購你想要的牌<br />
-          成為一流的決鬥者!
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="aboutUs w-100"></div>
-      </div>
-    </div>
-    <div class="row mb-4 mt-4 animatedY ">
-      <div class="col-md-8">
-        <div class="doYouKnow w-100"></div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="h2 text-decoration-underline m-3 p-3 fw-bolder">你知道嗎</div>
-        <div class="h6 lh-lg text-start m-auto p-4 mb-auto">
-          遊戲王卡牌遊戲於1999年時在日本推出，
-          之後普及至亞洲、歐洲、美洲、澳洲等地，
-          從2003年開始每年皆舉辦世界大賽。
-          在2009年7月7日時獲得金氏世界紀錄大全認證為全世界最暢銷的交換卡片遊戲!
-        </div>
-      </div>
-    </div>
-    <div style="position: absolute; bottom: 0%; right: 20px; opacity: 0.5;">
-      <a href="#cardType">
-        <i class="bi bi-caret-down-square-fill text-white"
-        style="font-size: 50px;"></i></a>
-    </div>
-  </section> -->
-
-
   <Subscribe></Subscribe>
       <div>
       </div>
